@@ -4,13 +4,13 @@ import os
 onnx_path = "model.onnx"
 output_dir = "converted_model"
 
-# Crear carpeta de salida si no existe
+# Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
-# Cambiar temporalmente al directorio de salida
+# Temporarily change to the output directory
 os.chdir(output_dir)
 
-# Conversión sin parámetros adicionales
+# Conversion without additional parameters
 convert(
     input_onnx_file_path=os.path.join("..", onnx_path)
 )
