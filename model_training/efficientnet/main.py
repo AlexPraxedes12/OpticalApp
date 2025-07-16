@@ -10,7 +10,7 @@ import torch.nn as nn
 import timm
 from torch.optim import Adam
 
-# Configuración
+# Configuration
 BATCH_SIZE = 16
 EPOCHS = 10
 NUM_CLASSES = 28
@@ -18,7 +18,7 @@ CSV_PATH = "rfmid_labels.csv"
 IMAGE_DIR = "rfmid_images"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Dataset personalizado
+# Custom dataset
 class RFMiDDataset(Dataset):
     def __init__(self, csv_path, image_dir, transform=None):
         self.data = pd.read_csv(csv_path)
@@ -37,13 +37,13 @@ class RFMiDDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-# Transformaciones
+# Transformations
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor()
 ])
 
-# Cargar datos
+# Load data
 df = pd.read_csv(CSV_PATH)
 train_df, val_df = train_test_split(df, test_size=0.2, random_state=42)
 
@@ -56,12 +56,12 @@ val_dataset = RFMiDDataset("val.csv", IMAGE_DIR, transform=transform)
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE)
 
-# Modelo
+# Model
 model = timm.create_model("efficientnet_b0", pretrained=True)
 model.classifier = nn.Linear(model.classifier.in_features, NUM_CLASSES)
 model = model.to(DEVICE)
 
-# Entrenamiento
+# Training
 optimizer = Adam(model.parameters(), lr=1e-4)
 criterion = nn.BCEWithLogitsLoss()
 
@@ -78,5 +78,5 @@ for epoch in range(EPOCHS):
         total_loss += loss.item()
     print(f"Epoch {epoch+1}/{EPOCHS}, Loss: {total_loss/len(train_loader):.4f}")
 
-# Guardar modelo
+# Save model
 torch.save(model.state_dict(), "efficientnet_rfmid.pth")

@@ -83,7 +83,7 @@ def train_model(train_loader, val_loader, model, criterion, optimizer, device, n
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Paths (ajusta según tu Drive o entorno local)
+    # Paths (adjust for your Drive or local environment)
     train_dir = "/content/Training_Set/Training"
     train_csv = "/content/Training_Set/RFMiD_Training_Labels.csv"
     val_dir = "/content/Evaluation_Set/Validation"
