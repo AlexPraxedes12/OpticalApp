@@ -54,13 +54,9 @@ UI strings, condition names, descriptions, and voice output are provided in **En
 ---
 
 ## Try It
+You can download the latest version of the application here:
 
-The APK build will be published in this GitHub repository so others can try the app and contribute. Feedback and community collaboration are welcome.
-## 📥 Descargar APK
-
-Puedes descargar la última versión de la aplicación aquí:
-
-👉 [Descargar EyeScan APK](https://github.com/AlexPraxedes12/OpticalApp/releases/latest/download/app-release.apk)
+👉 [Download OpticalApp APK](https://github.com/AlexPraxedes12/OpticalApp/releases/latest/download/app-release.apk)
 
 
 ---
