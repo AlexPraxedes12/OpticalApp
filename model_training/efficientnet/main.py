@@ -13,7 +13,7 @@ from torch.optim import Adam
 # Configuration
 BATCH_SIZE = 16
 EPOCHS = 10
-NUM_CLASSES = 28
+NUM_CLASSES = 29
 CSV_PATH = "rfmid_labels.csv"
 IMAGE_DIR = "rfmid_images"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")

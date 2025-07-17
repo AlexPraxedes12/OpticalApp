@@ -465,6 +465,19 @@ const Map<String, Map<String, dynamic>> conditionDetails = {
       'varies'
     ],
   },
+  'Normal': {
+    'name': {
+      'en': 'Normal',
+      'es': 'Normal',
+      'fr': 'Normal'
+    },
+    'description': {
+      'en': 'No signs of retinal disease detected.',
+      'es': 'No se detectan signos de enfermedad retiniana.',
+      'fr': 'Aucun signe de maladie r\u00E9tinienne d\u00E9tect\u00E9.'
+    },
+    'symptoms': []
+  },
 };
 
 /// Returns translated details for a condition code.

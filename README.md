@@ -6,7 +6,7 @@ OpticalApp is a Flutter-based mobile application submitted to the James Dyson Aw
 OpticalApp helps communities with limited access to ophthalmologists by allowing non-experts to screen for retinal diseases using just a smartphone. The app loads a lightweight EfficientNet-B0 model to classify fundus images directly on-device without internet connectivity.
 
 ## Features
-- Classifies **28** retinal diseases from fundus photographs
+- Classifies **29** retinal diseases from fundus photographs
 - Works completely **offline**
 - Provides textual diagnosis and symptom descriptions
 - Optional voice output via text-to-speech
