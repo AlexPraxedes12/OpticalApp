@@ -16,7 +16,7 @@ import torch.optim as optim
 
 class RFMiDDataset(Dataset):
     def __init__(self, csv_file, img_dir, transform=None):
-        """Dataset loader for the RFMiD CSV using 28 abbreviated disease labels."""
+        """Dataset loader for the RFMiD CSV using 29 abbreviated disease labels."""
 
         # Columns that correspond to the disease labels to predict
         self.disease_cols = [
