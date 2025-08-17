@@ -40,7 +40,6 @@
   - [Option B — 3D‑Printed Adapter](#option-b--3d-printed-adapter)
   - [Electrical schematic](#electrical-schematic)
   - [3D Model Files](#3d-model-files)
-  - [3D Model Viewer (website)](#3d-model-viewer-website)
 - [Lens Choice & Trade‑offs (20D vs magnifying glass)](#lens-choice--trade-offs-20d-vs-magnifying-glass)
 - [Comparison with Commercial Solutions](#comparison-with-commercial-solutions)
 - [Cost Summary](#-cost-summary)
@@ -115,22 +114,6 @@ Capture fundus images using either a **cardboard tube adapter** or a **3D‑prin
 - [`./3D_model/scad_funcional.scad`](./3D_model/scad_funcional.scad)
 
 Use any STL viewer or the project landing page to explore the model before printing.
-
-### 3D Model Viewer (website)
-If you host the landing page, make sure the viewer **and** the download button both point to **`./3D_model/model.stl`**, and serve the site over **HTTP/HTTPS** (e.g., GitHub Pages).
-
-```html
-<!-- JS viewer -->
-<script>
-  const STL_PATH = './3D_model/model.stl';
-  // pass STL_PATH to your STL loader...
-</script>
-
-<!-- Download button -->
-<a href="./3D_model/model.stl" download="OpticalApp_Adapter.stl">Download the .STL File</a>
-```
-
----
 
 ## 🔭 Lens Choice & Trade‑offs (20D vs magnifying glass)
 
