@@ -13,6 +13,18 @@
 
 ---
 
+## 📸 App Preview
+
+<p align="center">
+  <img src="sano.jpg" alt="Healthy Eye Screenshot" width="300"/>
+  <img src="anomalo.jpg" alt="Anomalous Eye Screenshot" width="300"/>
+</p>
+
+🎥 **Watch the video demo**  
+[![Video Presentation](https://img.youtube.com/vi/UjFPXKP18SA/hqdefault.jpg)](https://youtu.be/UjFPXKP18SA)
+
+---
+
 ## 📚 Table of Contents
 - [Highlights](#-highlights)
 - [DIY Fundus Adapter](#-diy-fundus-adapter)
