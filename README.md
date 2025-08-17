@@ -72,18 +72,17 @@ Capture fundus images using either a **cardboard tube adapter** or a **3D‑prin
 - Magnifying‑glass lens (~18–25 mm Ø) *or* **20D lens**
 - Cardboard tube (paper‑towel/toilet‑paper) or rolled cardboard
 - Black light‑blocking tape; scissors/cutter
-- Elastic bands or a phone clamp
-- **LED + small battery holder + slide switch + wire**
-- **Diffuser:** thin **plastic thermal cap** (translucent)
+- Optional: phone case + tape **or** a simple **cardboard cradle** to keep alignment
+- **Lighting:** use the **phone’s flash** or an **external lamp** (no built‑in LED in this option)
 
 **Build steps**
 1. **Lens mount** — Cut a round window and tape the **magnifying lens** centered. For **20D**, add a ring spacer so it fits snugly.  
-2. **Phone alignment** — Cut a rectangular window aligned with the phone’s main camera; secure the phone with elastic bands or a clamp.  
-3. **Illumination** — Mount a small **LED** near the front; cover it with the **plastic cap** to act as a **diffuser** and reduce glare.  
-4. **Power & switch** — Wire **battery → switch → LED(+)** and **battery(−) → LED(−)**; tape the wiring along the tube.  
-5. **Blackout** — Wrap joints with black tape to block ambient light.  
-6. **Focus** — LED on, phone flash off; start a few centimeters away and approach slowly until the fundus is sharp.  
-   - With a **20D** lens you’ll need **more working distance** (slightly longer tube or hold the 20D a few mm ahead).
+2. **Phone alignment** — Cut a rectangular window aligned with the phone’s main camera; hold/align the phone using tape or a simple **cardboard cradle** (no elastic bands).  
+3. **Illumination** — Use the **phone flash** or an **external lamp**. To reduce glare, diffuse the flash with 1–2 layers of **matte tape** or a thin **translucent plastic cap**; if using an external light, keep it slightly **off‑axis**.  
+4. **Blackout** — Wrap joints with black tape to block ambient light.  
+5. **Focus** — Flash/light on; start a few centimeters away and approach slowly until the fundus is sharp. *(With a **20D** lens you’ll need a bit more working distance.)*
+
+> **Note:** Option A has **no internal LED, switch or battery**. See Option B for a self‑contained lighting setup.
 
 ---
 
@@ -105,6 +104,9 @@ Capture fundus images using either a **cardboard tube adapter** or a **3D‑prin
 
 ### Electrical schematic
 
+> The following circuit applies **only to Option B (3D‑printed)**.  
+> Option A (cardboard) uses the phone flash or an external lamp and has **no internal lighting**.
+
 <img src="./assets/circuit_led_switch_en.svg" alt="LED + switch + battery holder circuit" width="760" />
 
 ---
@@ -113,7 +115,9 @@ Capture fundus images using either a **cardboard tube adapter** or a **3D‑prin
 - [`./3D_model/model.stl`](./3D_model/model.stl)  
 - [`./3D_model/scad_funcional.scad`](./3D_model/scad_funcional.scad)
 
-Use any STL viewer or the project landing page to explore the model before printing.
+Use any STL viewer or the project landing page to explore the model before printing. If you host a website/landing, ensure both the viewer and the download link point to `./3D_model/model.stl` and serve the site over **HTTP/HTTPS** (e.g., GitHub Pages).
+
+---
 
 ## 🔭 Lens Choice & Trade‑offs (20D vs magnifying glass)
 
@@ -136,7 +140,7 @@ Use any STL viewer or the project landing page to explore the model before print
 | Aspect | Professional fundus cameras | Smartphone adapters (commercial) | **OpticalApp DIY** |
 |---|---|---|---|
 | Hardware cost | **Thousands of USD** (clinic‑grade) | **Hundreds of USD** (phone attachments) | **MXN $10–$150** |
-| Power & portability | Mains power / bulky | Portable | **Fully portable**, battery‑powered LED |
+| Power & portability | Mains power / bulky | Portable | **Fully portable**, battery‑powered LED (Option B) |
 | Operation | Trained operator | Easier, but proprietary | **Open & replicable**, step‑by‑step build |
 | Model explainability | Varies | Varies | **On‑device AI**, multilingual TTS |
 | Customization | Low | Low–medium | **High** (OpenSCAD params, STL provided) |
@@ -168,3 +172,4 @@ This project is **not a medical device**. Use for learning, prototyping, or comm
 
 ## 📄 License
 Specify your license (e.g., MIT) or include a `LICENSE` file.
+
