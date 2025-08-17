@@ -14,7 +14,7 @@ class OptiScanApp extends StatelessWidget {
       builder: (context, lang, _) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'OptiScan',
+          title: 'OpticalApp',
           theme: ThemeData(
             useMaterial3: true,
             fontFamily: 'SF Pro Display',
