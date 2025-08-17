@@ -1,0 +1,167 @@
+# OpticalApp — Accessible AI‑Powered Eye Screening + DIY Fundus Adapter
+
+**Website:** **https://opticalapp.com**
+
+> A practical, low‑cost approach to retinal screening on a smartphone.  
+> OpticalApp runs **offline** on device (TensorFlow Lite) and pairs with a **DIY fundus adapter** you can build from a **cardboard tube** or **3D‑print** in an afternoon.
+
+---
+
+## 📦 Quick Links
+- **APK:** see the **Releases** section of this repository
+- **Demo video:** https://youtu.be/UjFPXKP18SA
+
+---
+
+## 📚 Table of Contents
+- [Highlights](#-highlights)
+- [DIY Fundus Adapter](#-diy-fundus-adapter)
+  - [Option A — Cardboard Tube (with or without 20D)](#option-a--cardboard-tube-with-or-without-20d)
+  - [Option B — 3D‑Printed Adapter](#option-b--3d-printed-adapter)
+  - [Electrical schematic](#electrical-schematic)
+  - [3D Model Files](#3d-model-files)
+  - [3D Model Viewer (website)](#3d-model-viewer-website)
+- [Lens Choice & Trade‑offs (20D vs magnifying glass)](#lens-choice--trade-offs-20d-vs-magnifying-glass)
+- [Comparison with Commercial Solutions](#comparison-with-commercial-solutions)
+- [Cost Summary](#-cost-summary)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [Disclaimer](#-disclaimer)
+- [License](#-license)
+
+---
+
+## ✨ Highlights
+
+- **Flutter** mobile app
+- **EfficientNet‑B0** trained on **RFMiD** → converted to **TensorFlow Lite** → **offline** inference on device
+- **Multilingual** UI: English, Spanish, French
+- **Text‑to‑Speech** explanations
+- Works with **camera** or **gallery** images
+- Open, replicable **DIY adapters** (cardboard or 3D‑printed)
+
+---
+
+## 🔧 DIY Fundus Adapter
+
+Capture fundus images using either a **cardboard tube adapter** or a **3D‑printed adapter**. Both work with a simple **magnifying‑glass lens**; if you own an ophthalmic **20D lens**, you can adapt diameters and distances accordingly.
+
+### Option A — Cardboard Tube (with or without 20D)
+**Estimated cost:** **MXN $10**
+
+**Bill of materials**
+- Magnifying‑glass lens (~18–25 mm Ø) *or* **20D lens**
+- Cardboard tube (paper‑towel/toilet‑paper) or rolled cardboard
+- Black light‑blocking tape; scissors/cutter
+- Elastic bands or a phone clamp
+- **LED + small battery holder + slide switch + wire**
+- **Diffuser:** thin **plastic thermal cap** (translucent)
+
+**Build steps**
+1. **Lens mount** — Cut a round window and tape the **magnifying lens** centered. For **20D**, add a ring spacer so it fits snugly.  
+2. **Phone alignment** — Cut a rectangular window aligned with the phone’s main camera; secure the phone with elastic bands or a clamp.  
+3. **Illumination** — Mount a small **LED** near the front; cover it with the **plastic cap** to act as a **diffuser** and reduce glare.  
+4. **Power & switch** — Wire **battery → switch → LED(+)** and **battery(−) → LED(−)**; tape the wiring along the tube.  
+5. **Blackout** — Wrap joints with black tape to block ambient light.  
+6. **Focus** — LED on, phone flash off; start a few centimeters away and approach slowly until the fundus is sharp.  
+   - With a **20D** lens you’ll need **more working distance** (slightly longer tube or hold the 20D a few mm ahead).
+
+---
+
+### Option B — 3D‑Printed Adapter
+**Estimated cost:** **MXN $150** (printing + small parts)
+
+**Files**
+- `./3D_model/model.stl`
+- `./3D_model/scad_funcional.scad` *(parametric: change lens Ø/thickness/offsets for magnifier vs 20D and re‑print)*
+
+**Assembly (with LED)**
+- Insert the **LED through the cylinder’s side hole** (slightly off‑axis) and add the **plastic‑cap diffuser**.  
+- Glue the **slide switch** on the **side of the top rectangular base**.  
+- Glue the **battery holder under the base**; route one wire through the **small pass‑through hole** you drilled.  
+- **Wiring:** `(+ battery) → switch → (+ LED)` and `(− battery) → (− LED)`.  
+  *Optional series resistor:* `R = (Vbat − Vf_LED) / I_LED` (e.g., 3.0 V, Vf≈2.8 V, I≈20 mA → R≈10 Ω).
+
+---
+
+### Electrical schematic
+
+<img src="./assets/circuit_led_switch_en.svg" alt="LED + switch + battery holder circuit" width="760" />
+
+---
+
+### 3D Model Files
+- [`./3D_model/model.stl`](./3D_model/model.stl)  
+- [`./3D_model/scad_funcional.scad`](./3D_model/scad_funcional.scad)
+
+Use any STL viewer or the project landing page to explore the model before printing.
+
+### 3D Model Viewer (website)
+If you host the landing page, make sure the viewer **and** the download button both point to **`./3D_model/model.stl`**, and serve the site over **HTTP/HTTPS** (e.g., GitHub Pages).
+
+```html
+<!-- JS viewer -->
+<script>
+  const STL_PATH = './3D_model/model.stl';
+  // pass STL_PATH to your STL loader...
+</script>
+
+<!-- Download button -->
+<a href="./3D_model/model.stl" download="OpticalApp_Adapter.stl">Download the .STL File</a>
+```
+
+---
+
+## 🔭 Lens Choice & Trade‑offs (20D vs magnifying glass)
+
+- **20D ophthalmic lens**  
+  - ✅ Excellent optical quality; wider field of view; better edge sharpness.  
+  - ⚠️ Typically **expensive** and requires **more working distance**; handling is less forgiving.  
+  - 🔧 Use the `.scad` parameters to adapt holder depth/diameter.
+
+- **Magnifying‑glass lens**  
+  - ✅ **Ultra‑low cost** and easy to source; great for prototyping and education.  
+  - ⚠️ Narrower FOV and more aberrations; focus is more sensitive.  
+  - 💡 With a good **diffuser** and careful alignment you can still obtain useful images.
+
+**Practical recommendation:** aim for a **middle ground** — design around a **magnifier** for accessibility, but keep the **parametric** `.scad` tunable so users who own a **20D** can swap lenses by editing diameter/thickness/offsets and re‑printing.
+
+---
+
+## ⚖️ Comparison with Commercial Solutions
+
+| Aspect | Professional fundus cameras | Smartphone adapters (commercial) | **OpticalApp DIY** |
+|---|---|---|---|
+| Hardware cost | **Thousands of USD** (clinic‑grade) | **Hundreds of USD** (phone attachments) | **MXN $10–$150** |
+| Power & portability | Mains power / bulky | Portable | **Fully portable**, battery‑powered LED |
+| Operation | Trained operator | Easier, but proprietary | **Open & replicable**, step‑by‑step build |
+| Model explainability | Varies | Varies | **On‑device AI**, multilingual TTS |
+| Customization | Low | Low–medium | **High** (OpenSCAD params, STL provided) |
+
+*Note:* Commercial/clinic‑grade systems provide top optical performance and validated workflows. OpticalApp targets **accessibility, education, and community screening pilots**, not clinical diagnosis.
+
+---
+
+## 💰 Cost Summary
+
+| Adapter | Estimated Cost |
+|---|---|
+| **Cardboard tube (magnifier or 20D)** | **MXN $10** |
+| **3D‑printed (parametric)** | **MXN $150** |
+
+---
+
+## 🗺️ Roadmap
+- Collect more mobile‑captured training data  
+- Iterate optical design (printed + cardboard)  
+- iOS/Web support  
+- Clinical validation & referral workflow
+
+## 🤝 Contributing
+Issues and PRs are welcome. Please share lens dimensions and your `.scad` parameters if you adapt to other lenses.
+
+## ⚠️ Disclaimer
+This project is **not a medical device**. Use for learning, prototyping, or community screening pilots. For clinical use, consult local regulations and an eye‑care professional.
+
+## 📄 License
+Specify your license (e.g., MIT) or include a `LICENSE` file.
