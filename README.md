@@ -2,14 +2,22 @@
 
 **Website:** **https://opticalapp.com**
 
+<p align="center">
+  <a href="https://github.com/AlexPraxedes12/OpticalApp/releases/latest">
+    <img src="https://img.shields.io/badge/Download-APK-0f766e?style=for-the-badge&logo=android&logoColor=white" alt="Download APK">
+  </a>
+  &nbsp;
+  <a href="https://youtu.be/UjFPXKP18SA">
+    <img src="https://img.shields.io/badge/Watch-Demo%20Video-2563eb?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video">
+  </a>
+  &nbsp;
+  <a href="https://opticalapp.com">
+    <img src="https://img.shields.io/badge/Visit-Website-7c3aed?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
+  </a>
+</p>
+
 > A practical, low‑cost approach to retinal screening on a smartphone.  
 > OpticalApp runs **offline** on device (TensorFlow Lite) and pairs with a **DIY fundus adapter** you can build from a **cardboard tube** or **3D‑print** in an afternoon.
-
----
-
-## 📦 Quick Links
-- **APK:** see the **Releases** section of this repository
-- **Demo video:** https://youtu.be/UjFPXKP18SA
 
 ---
 
