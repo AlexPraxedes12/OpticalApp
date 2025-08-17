@@ -33,6 +33,10 @@ Download the latest version of the app from the [GitHub Releases](https://github
 - Approximate cost: **MXN $150**
 *Add image here (assembled adapter / 3D render).*
 
+#### Electrical schematic
+
+<img src="./assets/circuit_led_switch.svg" alt="LED + switch + battery circuit" width="720" />
+
 *Note: Both adapters can be adapted to secure a 20D ophthalmic lens. If you don't have one, the designs still work using only the phone optics.*
 
 ### 3D Model Files
