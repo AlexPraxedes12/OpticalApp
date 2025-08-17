@@ -1,82 +1,72 @@
-# OpticalApp 👁️📱
-
-**Accessible AI-Powered Eye Disease Detection**
-
-Created by **Alejandro Aguilar Martínez** – James Dyson Award Submission
-
----
-
-## 📸 App Preview
+# OpticalApp — Accessible AI-Powered Eye Disease Detection + DIY Fundus Adapter
 
 <p align="center">
-  <img src="sano.jpg" alt="Healthy Eye Screenshot" width="300"/>
-  <img src="anomalo.jpg" alt="Anomalous Eye Screenshot" width="300"/>
+  <img src="./sano.jpg" alt="Healthy eye screenshot" width="300"/>
+  <img src="./anomalo.jpg" alt="Anomalous eye screenshot" width="300"/>
 </p>
 
 🎥 **Watch the video demo**  
 [![Video Presentation](https://img.youtube.com/vi/UjFPXKP18SA/hqdefault.jpg)](https://youtu.be/UjFPXKP18SA)
 
----
+📦 **APK Download**  
+Download the latest version of the app from the [GitHub Releases](https://github.com/AlexPraxedes12/OpticalApp/releases). Test using your own fundus images or the ones in `testing_images/`.
 
-## 📦 APK Download
+## App Features
+- EfficientNet‑B0 trained on the RFMiD dataset (28+ diseases)
+- Runs fully offline via TensorFlow Lite
+- Multilingual interface (English, Spanish, French)
+- Text‑to‑Speech explanations
+- Accepts camera capture and gallery input
 
-Download the latest version of the app from the GitHub [Releases](https://github.com/AlexPraxedes12/OpticalApp/releases).  
-Test the app using your own fundus images or the ones provided in the `testing_images/` folder.
+## DIY Fundus Adapter
 
----
+### Option A — Cardboard Tube Adapter (with or without 20D)
+- Recycled cardboard tube aligned with the phone camera
+- LED (phone's or small external) + simple paper diffuser
+- Works with or without a 20D lens
+- Approximate cost: **MXN $10**
+*Add image here (assembled adapter / 3D render).*
 
-## 🔧 Build Your Own Adapter (DIY Manual)
+### Option B — 3D‑Printed Adapter
+- Modular 3D‑printed shell for alignment and stability
+- Built to hold an LED + diffuser and optionally a 20D lens
+- Approximate cost: **MXN $150**
+*Add image here (assembled adapter / 3D render).*
 
-To capture fundus eye images using a phone, I built a **low-cost adapter**:
+*Note: Both adapters can be adapted to secure a 20D ophthalmic lens. If you don't have one, the designs still work using only the phone optics.*
 
-**Materials used:**
-- 1 small magnifying glass (lens diameter ~2 cm)
-- Cardboard (any rigid piece)
-- Black tape (to block external light)
-- Optional: White paper to reduce reflections
+### 3D Model Files
+- [`./3D_model/model.stl`](./3D_model/model.stl)  
+- [`./3D_model/scad_funcional.scad`](./3D_model/scad_funcional.scad)  
+Use any 3D viewer or a Three.js viewer to explore the models before printing.
 
-**Assembly:**
-1. Cut a small hole in the cardboard and tape the magnifying glass in place.
-2. Align the lens with the phone’s main camera.
-3. Create a tunnel using cardboard to reduce light interference.
-4. Use your flashlight at an angle to avoid glare.
+## Illumination & Diffuser
+A small LED paired with a thin white diffuser provides uniform retinal illumination while minimizing glare. Adjust the angle and distance to avoid reflections when capturing images.
 
-💡 This prototype cost less than **$0.50 USD** and worked well enough to test the app.  
-Future versions aim for a more stable and replicable structure.
+## Cost Summary
 
----
+| Adapter Option | Estimated Cost |
+|----------------|----------------|
+| Option A — Cardboard Tube | MXN $10 |
+| Option B — 3D‑Printed | MXN $150 |
 
-## 🧠 Technical Overview
+## Technical Overview
+- Built with Flutter
+- EfficientNet‑B0 model on RFMiD
+- Offline inference with TensorFlow Lite
+- Multilingual support & TTS
+- Supports camera and gallery input
 
-- **Built with Flutter** (cross-platform mobile framework)
-- **Model:** EfficientNet-B0 trained with **RFMiD dataset** (28+ diseases)
-- **Runs fully offline** using TensorFlow Lite
-- **Multilingual:** English, Spanish, and French
-- **Voice explanation** with TTS
-- Accepts **camera and gallery images**
+## Disclaimer
+OpticalApp is an educational tool and is **not** a substitute for professional medical diagnosis or treatment. Always consult a qualified eye-care professional.
 
----
+## Roadmap & Contributing
+- Collect more mobile‑captured training images  
+- Refine adapter designs and illumination  
+- Expand platform support (iOS, web)  
+- Add clinical validation and referral workflows  
 
-## 💡 Inspiration
+Contributions and issues are welcome!
 
-Originally this project started as a cancer detection idea, but later pivoted to ocular health — an area I grew passionate about due to personal and family experiences.  
-
----
-
-## 🔁 Roadmap
-
-- Collect more mobile-taken training images
-- Improve adapter design
-- Expand to iOS and web
-- Add clinical validation and referral system
-
----
-
-## 🤝 Contribute
-
-Want to improve OpticalApp or use it in your community?  
-Open an issue or fork this repo — contributions are welcome.
-
----
-
-*Made with ❤️ for innovation in accessible visual healthcare.*
+## License
+Released under the MIT License.
