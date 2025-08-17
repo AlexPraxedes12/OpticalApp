@@ -35,7 +35,7 @@ Download the latest version of the app from the [GitHub Releases](https://github
 
 #### Electrical schematic
 
-<img src="./assets/circuito_led_interruptor_portapilas.svg" alt="LED + switch + battery circuit" width="720" />
+<img src="./assets/circuit_led_switch_en.svg" alt="LED + switch + battery holder circuit" width="720" />
 
 *Note: Both adapters can be adapted to secure a 20D ophthalmic lens. If you don't have one, the designs still work using only the phone optics.*
 
