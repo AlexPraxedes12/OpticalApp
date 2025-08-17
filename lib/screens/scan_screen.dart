@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -26,6 +27,10 @@ class _ScanScreenState extends State<ScanScreen>
   late AnimationController _pulseController;
   int? _countdown;
   FlashMode _flashMode = FlashMode.off;
+  double _minZoom = 1.0;
+  double _maxZoom = 1.0;
+  double _currentZoom = 1.0;
+  double _baseZoom = 1.0;
 
   @override
   void initState() {
@@ -50,10 +55,10 @@ class _ScanScreenState extends State<ScanScreen>
       _cameras = await availableCameras();
       if (_cameras.isEmpty) return;
 
-      // Default to the front camera if available
-      final frontIndex =
-          _cameras.indexWhere((c) => c.lensDirection == CameraLensDirection.front);
-      _selectedCameraIndex = frontIndex >= 0 ? frontIndex : 0;
+      // Prefer the back camera if available
+      final backIndex =
+          _cameras.indexWhere((c) => c.lensDirection == CameraLensDirection.back);
+      _selectedCameraIndex = backIndex >= 0 ? backIndex : 0;
 
       _cameraController = CameraController(
         _cameras[_selectedCameraIndex],
@@ -63,6 +68,11 @@ class _ScanScreenState extends State<ScanScreen>
       await _cameraController!.initialize();
       _flashMode = FlashMode.off;
       await _cameraController!.setFlashMode(_flashMode);
+      _minZoom = await _cameraController!.getMinZoomLevel();
+      _maxZoom = await _cameraController!.getMaxZoomLevel();
+      _currentZoom = math.min(10.0, _maxZoom);
+      await _cameraController!.setZoomLevel(_currentZoom);
+      _baseZoom = _currentZoom;
       if (mounted) setState(() {});
     } catch (e) {
       debugPrint('Camera initialization failed: $e');
@@ -83,10 +93,24 @@ class _ScanScreenState extends State<ScanScreen>
       await _cameraController!.initialize();
       _flashMode = FlashMode.off;
       await _cameraController!.setFlashMode(_flashMode);
+      _minZoom = await _cameraController!.getMinZoomLevel();
+      _maxZoom = await _cameraController!.getMaxZoomLevel();
+      _currentZoom = math.min(10.0, _maxZoom);
+      await _cameraController!.setZoomLevel(_currentZoom);
+      _baseZoom = _currentZoom;
       if (mounted) setState(() {});
     } catch (e) {
       debugPrint('Camera switch failed: $e');
     }
+  }
+
+  Future<void> _stepZoom(double delta) async {
+    if (_cameraController == null) return;
+    final zoom = (_currentZoom + delta).clamp(_minZoom, _maxZoom);
+    await _cameraController!.setZoomLevel(zoom);
+    setState(() {
+      _currentZoom = zoom;
+    });
   }
 
   Future<void> _toggleFlash() async {
@@ -263,7 +287,20 @@ class _ScanScreenState extends State<ScanScreen>
                           child: SizedBox(
                             width: size,
                             height: size,
-                            child: CameraPreview(_cameraController!),
+                            child: GestureDetector(
+                              onScaleStart: (_) {
+                                _baseZoom = _currentZoom;
+                              },
+                              onScaleUpdate: (details) {
+                                final newZoom =
+                                    (_baseZoom * details.scale).clamp(_minZoom, _maxZoom);
+                                _cameraController!.setZoomLevel(newZoom);
+                                setState(() {
+                                  _currentZoom = newZoom;
+                                });
+                              },
+                              child: CameraPreview(_cameraController!),
+                            ),
                           ),
                         ),
                         AnimatedBuilder(
@@ -300,6 +337,26 @@ class _ScanScreenState extends State<ScanScreen>
                           ),
                         Positioned(
                           top: 16,
+                          left: 0,
+                          right: 0,
+                          child: Center(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Colors.black54,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                '${_currentZoom.toStringAsFixed(1)}x',
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 16,
                           left: 16,
                           child: IconButton(
                             tooltip: _flashMode == FlashMode.torch
@@ -321,6 +378,25 @@ class _ScanScreenState extends State<ScanScreen>
                             icon: const Icon(Icons.cameraswitch,
                                 color: Colors.white),
                             onPressed: _switchCamera,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 16,
+                          left: 0,
+                          right: 0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.remove, color: Colors.white),
+                                onPressed: () => _stepZoom(-0.5),
+                              ),
+                              const SizedBox(width: 24),
+                              IconButton(
+                                icon: const Icon(Icons.add, color: Colors.white),
+                                onPressed: () => _stepZoom(0.5),
+                              ),
+                            ],
                           ),
                         ),
                       ],
