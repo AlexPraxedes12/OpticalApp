@@ -1,6 +1,6 @@
 # OpticalApp — Accessible AI‑Powered Eye Screening + DIY Fundus Adapter
 
-**Website:** **https://opticalapp.com**
+**Website:** **https://opticalapp.org**
 
 <p align="center">
   <a href="https://github.com/AlexPraxedes12/OpticalApp/releases/latest">
