@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Watch-Demo%20Video-2563eb?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video">
   </a>
   &nbsp;
-  <a href="https://opticalapp.com">
+  <a href="https://opticalapp.org">
     <img src="https://img.shields.io/badge/Visit-Website-7c3aed?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
   </a>
 </p>
