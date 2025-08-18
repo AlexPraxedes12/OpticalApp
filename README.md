@@ -21,6 +21,14 @@
 
 ---
 
+## 🌍 The Problem: Accessible Eye Screening for Everyone
+
+Millions of people worldwide suffer from preventable vision loss due to conditions like diabetic retinopathy. Early screening is crucial, but professional fundus cameras cost thousands of dollars, limiting access in low‑resource communities.
+
+**OpticalApp** tackles this challenge by transforming a standard smartphone into a capable retinal screening tool, making early detection more accessible—anywhere.
+
+---
+
 ## 📸 App Preview
 
 <p align="center">
@@ -52,12 +60,11 @@
 
 ## ✨ Highlights
 
-- **Flutter** mobile app
-- **EfficientNet‑B0** trained on **RFMiD** → converted to **TensorFlow Lite** → **offline** inference on device
-- **Multilingual** UI: English, Spanish, French
-- **Text‑to‑Speech** explanations
-- Works with **camera** or **gallery** images
-- Open, replicable **DIY adapters** (cardboard or 3D‑printed)
+- **Flutter Mobile App:** Modern, fluid UI for Android.
+- **On‑Device AI Model:** **EfficientNet‑B0** trained on **RFMiD**, converted to **TensorFlow Lite** for **100% offline** inference—protecting patient privacy.
+- **Baseline Performance:** The current baseline achieves **Macro AUC = 0.687** and **F1‑Micro = 0.603**, showing on‑device feasibility for anomaly classification. *We welcome collaborators to improve performance further.*
+- **Multilingual UI:** English, Spanish, and French with **Text‑to‑Speech** explanations.
+- **Open & Replicable:** Two DIY adapters (**cardboard** or **3D‑printed**) that anyone can build.
 
 ---
 
@@ -66,7 +73,7 @@
 Capture fundus images using either a **cardboard tube adapter** or a **3D‑printed adapter**. Both work with a simple **magnifying‑glass lens**; if you own an ophthalmic **20D lens**, you can adapt diameters and distances accordingly.
 
 ### Option A — Cardboard Tube (with or without 20D)
-**Estimated cost:** **MXN $10**
+**Estimated cost:** **MXN $10** (~**$0.50 USD**)
 
 **Bill of materials**
 - Magnifying‑glass lens (~18–25 mm Ø) *or* **20D lens**
@@ -87,7 +94,7 @@ Capture fundus images using either a **cardboard tube adapter** or a **3D‑prin
 ---
 
 ### Option B — 3D‑Printed Adapter
-**Estimated cost:** **MXN $150** (printing + small parts)
+**Estimated cost:** **MXN $150** (~**$8.00 USD**) *(printing + small parts)*
 
 **Files**
 - `./3D_model/model.stl`
@@ -139,10 +146,10 @@ Use any STL viewer or the project landing page to explore the model before print
 
 | Aspect | Professional fundus cameras | Smartphone adapters (commercial) | **OpticalApp DIY** |
 |---|---|---|---|
-| Hardware cost | **Thousands of USD** (clinic‑grade) | **Hundreds of USD** (phone attachments) | **MXN $10–$150** |
+| Hardware cost | **$5,000–$25,000+ USD** | **$300–$1,500 USD** | **~$0.50–$8.00 USD (MXN $10–$150)** |
 | Power & portability | Mains power / bulky | Portable | **Fully portable**, battery‑powered LED (Option B) |
 | Operation | Trained operator | Easier, but proprietary | **Open & replicable**, step‑by‑step build |
-| Model explainability | Varies | Varies | **On‑device AI**, multilingual TTS |
+| Model features | Software varies | Cloud/proprietary | **On‑device AI**, multilingual TTS |
 | Customization | Low | Low–medium | **High** (OpenSCAD params, STL provided) |
 
 *Note:* Commercial/clinic‑grade systems provide top optical performance and validated workflows. OpticalApp targets **accessibility, education, and community screening pilots**, not clinical diagnosis.
@@ -153,13 +160,13 @@ Use any STL viewer or the project landing page to explore the model before print
 
 | Adapter | Estimated Cost |
 |---|---|
-| **Cardboard tube (magnifier or 20D)** | **MXN $10** |
-| **3D‑printed (parametric)** | **MXN $150** |
+| **Cardboard tube (magnifier or 20D)** | **MXN $10 (~$0.50 USD)** |
+| **3D‑printed (parametric)** | **MXN $150 (~$8.00 USD)** |
 
 ---
 
 ## 🗺️ Roadmap
-- Collect more mobile‑captured training data  
+- **Improve Model Accuracy:** Collect more **mobile‑captured** training data and explore stronger architectures.  
 - Iterate optical design (printed + cardboard)  
 - iOS/Web support  
 - Clinical validation & referral workflow
@@ -171,5 +178,4 @@ Issues and PRs are welcome. Please share lens dimensions and your `.scad` parame
 This project is **not a medical device**. Use for learning, prototyping, or community screening pilots. For clinical use, consult local regulations and an eye‑care professional.
 
 ## 📄 License
-Specify your license (e.g., MIT) or include a `LICENSE` file.
-
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
