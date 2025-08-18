@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/Download-APK-0f766e?style=for-the-badge&logo=android&logoColor=white" alt="Download APK">
   </a>
   &nbsp;
-  <a href="https://youtu.be/UjFPXKP18SA">
+  <a href="https://youtu.be/xMJfanl3nkY">
     <img src="https://img.shields.io/badge/Watch-Demo%20Video-2563eb?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video">
   </a>
   &nbsp;
