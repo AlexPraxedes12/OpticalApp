@@ -1,6 +1,6 @@
 # OpticalApp — Accessible AI-Powered Eye Screening
 
-**Website:** [https://opticalapp.org](https://opticalapp.org)
+**Website:** https://opticalapp.org
 
 <p align="center">
   <a href="https://youtu.be/xMJfanl3nkY">

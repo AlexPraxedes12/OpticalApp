@@ -127,3 +127,27 @@ ios/Runner/GoogleService-Info.plist
 *.swp
 *.DS_Store
 
+
+# Patent-safe public repo hygiene
+*.stl
+*.STL
+*.scad
+*.SCAD
+*.step
+*.STEP
+*.fcstd
+*.FCStd
+*.f3d
+*.F3D
+schematic*
+wiring*
+circuit*
+*.pdf
+# Keep large binaries out unless deliberately allowed
+*.zip
+*.7z
+*.rar
+*.exe
+*.apk
+*.ipa
+*.aab
