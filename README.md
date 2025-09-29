@@ -1,8 +1,25 @@
-# OpticalApp 👁️📱
+# OpticalApp — Accessible AI-Powered Eye Screening
 
-**Accessible AI-Powered Eye Disease Detection**
+**Website:** https://opticalapp.org
 
-Created by **Alejandro Aguilar Martínez** – James Dyson Award Submission
+<p align="center">
+  <a href="https://youtu.be/xMJfanl3nkY">
+    <img src="https://img.shields.io/badge/Watch-Demo%20Video-2563eb?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video">
+  </a>
+  &nbsp;
+  <a href="https://opticalapp.org">
+    <img src="https://img.shields.io/badge/Visit-Website-7c3aed?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
+  </a>
+</p>
+
+> OpticalApp transforms a standard smartphone into an accessible retinal screening tool.  
+> Powered by **on-device AI** and a **low-cost optical adapter**, OpticalApp brings early eye-health detection closer to underserved communities.
+
+---
+
+## 🌍 The Problem
+
+Millions worldwide suffer preventable vision loss. Professional fundus cameras are prohibitively expensive and often unavailable in rural areas. **OpticalApp** addresses this gap by offering an affordable, portable alternative for community screening pilots.
 
 ---
 
@@ -14,69 +31,42 @@ Created by **Alejandro Aguilar Martínez** – James Dyson Award Submission
 </p>
 
 🎥 **Watch the video demo**  
-[![Video Presentation](https://img.youtube.com/vi/UjFPXKP18SA/hqdefault.jpg)](https://youtu.be/UjFPXKP18SA)
+[![Video Presentation](https://img.youtube.com/vi/xMJfanl3nkY/hqdefault.jpg)](https://youtu.be/xMJfanl3nkY)
 
 ---
 
-## 📦 APK Download
+## ✨ Highlights
 
-Download the latest version of the app from the GitHub [Releases](https://github.com/AlexPraxedes12/OpticalApp/releases).  
-Test the app using your own fundus images or the ones provided in the `testing_images/` folder.
-
----
-
-## 🔧 Build Your Own Adapter (DIY Manual)
-
-To capture fundus eye images using a phone, I built a **low-cost adapter**:
-
-**Materials used:**
-- 1 small magnifying glass (lens diameter ~2 cm)
-- Cardboard (any rigid piece)
-- Black tape (to block external light)
-- Optional: White paper to reduce reflections
-
-**Assembly:**
-1. Cut a small hole in the cardboard and tape the magnifying glass in place.
-2. Align the lens with the phone’s main camera.
-3. Create a tunnel using cardboard to reduce light interference.
-4. Use your flashlight at an angle to avoid glare.
-
-💡 This prototype cost less than **$0.50 USD** and worked well enough to test the app.  
-Future versions aim for a more stable and replicable structure.
+- **Flutter Mobile App** with modern UI.  
+- **On-Device AI (TensorFlow Lite)** — runs offline, protecting privacy.  
+- **Multilingual UI**: English, Spanish, French.  
+- **Text-to-Speech explanations** for accessibility.  
+- **Affordable optical adapter** concept designed for low-resource settings.  
+- **Patent Pending**: technical files are shared only under NDA.
 
 ---
 
-## 🧠 Technical Overview
+## 🛠️ Hardware Concept
 
-- **Built with Flutter** (cross-platform mobile framework)
-- **Model:** EfficientNet-B0 trained with **RFMiD dataset** (28+ diseases)
-- **Runs fully offline** using TensorFlow Lite
-- **Multilingual:** English, Spanish, and French
-- **Voice explanation** with TTS
-- Accepts **camera and gallery images**
+The adapter uses low-cost optics and integrated illumination to enable smartphone-based fundus imaging.  
+Detailed dimensions, schematics, and 3D models are **not included in this public repo** and are only available to authorized evaluators.
 
 ---
 
-## 💡 Inspiration
+## 🗺️ Roadmap
 
-Originally this project started as a cancer detection idea, but later pivoted to ocular health — an area I grew passionate about due to personal and family experiences.  
-
----
-
-## 🔁 Roadmap
-
-- Collect more mobile-taken training images
-- Improve adapter design
-- Expand to iOS and web
-- Add clinical validation and referral system
+- Improve ML model accuracy with more mobile-captured training data.  
+- Continue refining adapter design.  
+- Add iOS and web support.  
+- Clinical validation with referral workflows.  
 
 ---
 
-## 🤝 Contribute
+## ⚠️ Disclaimer
 
-Want to improve OpticalApp or use it in your community?  
-Open an issue or fork this repo — contributions are welcome.
+OpticalApp is intended for educational and screening pilot purposes.  
+It is **not a certified medical device**. For clinical use, follow local regulations.
 
 ---
 
-*Made with ❤️ for innovation in accessible visual healthcare.*
+© 2025 OpticalApp. Patent Pending. All rights reserved.

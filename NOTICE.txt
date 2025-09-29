@@ -1,0 +1,3 @@
+OpticalApp — Patent Pending
+This repository contains a patent-safe, public summary.
+Detailed technical files (CAD, schematics, step-by-step assembly, internal ML architecture) are shared only with authorized evaluators under NDA.
